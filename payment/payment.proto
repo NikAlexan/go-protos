@@ -9,7 +9,6 @@ service PaymentService {
   rpc GetPaymentStats(GetPaymentStatsRequest) returns (PaymentStats);
 }
 
-
 message PaymentRequest {
   string order_id = 1;
   int64  amount   = 2;
@@ -28,3 +27,5 @@ message PaymentStats {
   int64 declined_count   = 3;
   int64 total_amount     = 4; // сумма в cents
 }
+
+message Test {}
