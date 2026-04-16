@@ -27,5 +27,3 @@ message PaymentStats {
   int64 declined_count   = 3;
   int64 total_amount     = 4; // сумма в cents
 }
-
-message Test {}
