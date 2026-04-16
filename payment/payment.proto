@@ -6,6 +6,7 @@ option go_package = "github.com/nikalexan/go-proto-gen/payment";
 
 service PaymentService {
   rpc ProcessPayment(PaymentRequest) returns (PaymentResponse);
+  rpc GetPaymentStats(GetPaymentStatsRequest) returns (PaymentStats);
 }
 
 message PaymentRequest {
@@ -16,4 +17,13 @@ message PaymentRequest {
 message PaymentResponse {
   string status         = 1;
   string transaction_id = 2;
+}
+
+message GetPaymentStatsRequest {}
+
+message PaymentStats {
+  int64 total_count      = 1;
+  int64 authorized_count = 2;
+  int64 declined_count   = 3;
+  int64 total_amount     = 4; // сумма в cents
 }
